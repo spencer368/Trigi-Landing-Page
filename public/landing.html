@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" href="/favicon.ico">
+<title>Trigi | The buyer truth your agents are missing</title>
+<meta name="description" content="Trigi turns your sales calls and CRM into buyer evidence that's counted, consistent, and comparable across accounts.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&family=Work+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* Trigi brand system, taken from trigi.ai production CSS */
+:root{
+ --bg:#faf8f5;--white:#fff;--ink:#1a1a1a;--text:#191919;--dim:#464646;--muted:#6b6b6b;--faint:#8c8c88;
+ --border:#e8e2d9;--border2:#e3e3df;--panel:#f6f6f3;--panel2:#f0f0ec;--cream:#f5f0e8;
+ --accent:#d97706;--accent2:#f2a33a;--accent-soft:#fdf3e4;
+ --pain:#bd3155;--success:#247953;--hes:#7854a5;--cond:#916115;--use:#087ca8;--cons:#b34c20;
+ --dark:#121212;--dark2:#1e1e1e;--dark-border:#2b2b2b;--dark-text:#f0f0ee;--dark-dim:#c2c2bd;--dark-faint:#8c8c88;
+ --serif:"DM Serif Display",Georgia,serif;--sans:"DM Sans",system-ui,sans-serif;--ui:"Work Sans",system-ui,sans-serif;--mono:"IBM Plex Mono",ui-monospace,monospace;
+ --shadow-card:0 6px 18px -14px #19191959;--shadow-overlay:0 24px 60px -20px #19191938;
+ --r:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration:none}
+img{display:block}
+.wrap{max-width:1180px;margin:0 auto;padding:0 32px}
+.eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:10px}
+.eyebrow .n{color:var(--accent)}
+.eyebrow.line:before{content:"";width:22px;height:1px;background:var(--accent)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;letter-spacing:-.02em;color:var(--ink)}
+h2{font-size:52px;line-height:1.06;margin:18px 0 18px;text-wrap:balance}
+h2 .a,h1 .a{color:var(--accent)}
+.lede{font-size:19px;line-height:1.6;color:var(--muted);max-width:620px}
+.ill{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;color:var(--cond);background:#fbf3e3;border:1px dashed #e2c48c;border-radius:4px;padding:3px 8px;font-weight:600;white-space:nowrap}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--sans);font-weight:600;font-size:15.5px;border-radius:10px;padding:14px 22px;transition:transform .15s,box-shadow .15s,background .15s;cursor:pointer;border:0}
+.btn-primary{background:var(--ink);color:#fff;box-shadow:0 10px 24px -12px #19191999,inset 0 1px 0 #ffffff1f}
+.btn-primary:hover{transform:translateY(-1px);background:#000}
+.btn-ghost{background:var(--white);color:var(--ink);border:1px solid var(--border);box-shadow:var(--shadow-card)}
+.btn-ghost .mono{font-family:var(--mono);font-size:12.5px;color:var(--muted);font-weight:500}
+.btn-accent{background:var(--accent);color:#fff;box-shadow:0 12px 28px -12px #d9770699}
+section{position:relative}
+.sec{padding:128px 0}
+.rule{border-top:1px solid var(--border)}
+
+/* nav */
+nav{position:sticky;top:0;z-index:50;background:#faf8f5d9;backdrop-filter:saturate(1.4) blur(14px);-webkit-backdrop-filter:saturate(1.4) blur(14px);border-bottom:1px solid #e8e2d980}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:68px}
+nav .logo img{height:28px}
+nav .links{display:flex;gap:34px;font-size:14.5px;color:var(--dim);font-weight:500}
+nav .links a:hover{color:var(--ink)}
+nav .right{display:flex;gap:10px;align-items:center}
+nav .btn{padding:10px 16px;font-size:14px;border-radius:9px}
+nav .signin{font-size:14.5px;color:var(--dim);font-weight:500;padding:0 8px}
+
+/* hero */
+.hero{padding:96px 0 0;overflow:hidden}
+.hero:before{content:"";position:absolute;inset:-200px 0 auto 0;height:1100px;background:radial-gradient(ellipse 60% 50% at 50% 30%,#fbeedd 0%,#faf8f500 70%),radial-gradient(circle at 50% 30%,transparent 0 220px,#f3e9dc55 221px,transparent 222px 360px,#f3e9dc44 361px,transparent 362px 520px,#f3e9dc33 521px,transparent 522px);pointer-events:none}
+.hero .wrap{position:relative;text-align:center}
+.badge{display:inline-flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border);border-radius:99px;padding:7px 15px 7px 12px;font-size:13.5px;color:var(--dim);box-shadow:var(--shadow-card)}
+.badge .dot{width:7px;height:7px;border-radius:50%;background:var(--accent2);box-shadow:0 0 0 4px #f2a33a26}
+.badge .sep{width:1px;height:12px;background:var(--border)}
+.hero h1{font-size:84px;line-height:1.0;letter-spacing:-.028em;margin:30px auto 0;max-width:980px;text-wrap:balance}
+.hero .lede{margin:28px auto 0;text-align:center;max-width:700px;font-size:20px}
+.hero .ctas{display:flex;gap:12px;justify-content:center;margin-top:38px}
+.hero .note{margin-top:18px;font-size:13.5px;color:var(--faint)}
+.hero .note b{color:var(--dim);font-weight:500}
+
+/* product frame */
+.frame{position:relative;margin:76px auto 0;max-width:1120px;background:var(--white);border:1px solid var(--border);border-radius:22px 22px 0 0;border-bottom:0;box-shadow:0 40px 90px -40px #19191940,0 0 0 8px #ffffff80;text-align:left;font-family:var(--ui)}
+.frame .chrome{display:flex;align-items:center;justify-content:space-between;padding:14px 20px;border-bottom:1px solid var(--border2)}
+.frame .chrome .l{display:flex;align-items:center;gap:14px}
+.frame .chrome .dots{display:flex;gap:6px}.frame .chrome .dots i{width:10px;height:10px;border-radius:50%;background:#e6e1d9;display:block}
+.frame .chrome .crumbs{font-family:var(--mono);font-size:12px;color:var(--faint)}
+.frame .chrome .crumbs b{color:var(--ink);font-weight:500}
+.frame .inner{padding:26px 28px 30px;display:grid;grid-template-columns:250px minmax(0,1fr);gap:28px}
+.side{border-right:1px solid var(--border2);padding-right:24px}
+.side h4{font-family:var(--serif);font-weight:400;font-size:24px;color:var(--ink)}
+.side .s{font-size:12.5px;color:var(--muted);margin-top:3px}
+.side .f{font-size:10.5px;color:var(--faint);letter-spacing:.06em;text-transform:uppercase;margin-top:8px}
+.side .tl{margin-top:20px;padding-top:16px;border-top:1px solid var(--border2)}
+.side .tl .k{font-size:10.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.side .tl p{font-size:13px;line-height:1.5;color:var(--dim);margin-top:6px}
+.side .stat{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:18px}
+.side .stat div{background:var(--panel);border:1px solid var(--border2);border-radius:10px;padding:10px 12px}
+.side .stat b{font-family:var(--serif);font-weight:400;font-size:24px;display:block;line-height:1.1;color:var(--ink)}
+.side .stat span{font-size:11px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;min-width:0}
+.tcard{min-width:0;background:var(--white);border:1px solid var(--border2);border-top:2px solid var(--c);border-radius:10px;padding:14px 15px 12px;font-family:var(--ui)}
+.tcard .cat{font-size:10.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--c)}
+.titem{padding:10px 0;border-bottom:1px solid var(--border2)}
+.titem:last-of-type{border-bottom:0;padding-bottom:4px}
+.titem .t{font-size:14px;font-weight:600;color:var(--ink);line-height:1.3}
+.titem .d{font-size:12.5px;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;margin-top:2px}
+.meta{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);margin-top:5px;flex-wrap:wrap}
+.meta .dots{display:inline-flex;gap:2.5px}.meta .dots i{width:5px;height:5px;border-radius:50%;background:var(--c);display:block}
+.meta b{color:var(--ink);font-weight:500}
+.more{font-size:12px;color:var(--ink);text-decoration:underline;text-underline-offset:3px;margin-top:6px;display:inline-block}
+.fade{position:absolute;left:0;right:0;bottom:0;height:120px;background:linear-gradient(#faf8f500,var(--bg));pointer-events:none}
+.c-pain{--c:var(--pain)}.c-suc{--c:var(--success)}.c-hes{--c:var(--hes)}.c-use{--c:var(--use)}.c-cond{--c:var(--cond)}.c-cons{--c:var(--cons)}
+
+/* problem */
+.problem .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:72px;align-items:center}
+.missing{display:grid;gap:0;margin-top:34px;border-top:1px solid var(--border)}
+.missing div{display:grid;grid-template-columns:40px 1fr;gap:14px;padding:18px 0;border-bottom:1px solid var(--border)}
+.missing .i{font-family:var(--mono);font-size:12px;color:var(--accent);padding-top:3px}
+.missing b{display:block;font-size:17px;font-weight:600;color:var(--ink)}
+.missing span{font-size:15px;color:var(--muted)}
+.vs{display:grid;gap:16px}
+.chat{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow-card)}
+.chat .hd{display:flex;justify-content:space-between;align-items:center;margin-bottom:12px}
+.chat .who{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--faint)}
+.chat .q{font-size:14px;color:var(--dim);background:var(--panel);border-radius:10px;padding:10px 13px;margin-bottom:12px}
+.chat .a{font-size:15px;color:var(--dim);line-height:1.6}
+.chat .a em{font-style:normal;background:#f1eee8;border-radius:3px;padding:0 3px;color:var(--muted)}
+.chat.raw{opacity:.92}
+.chat.tri{border-color:#ecd6b8;box-shadow:0 30px 60px -36px #b8770a59;position:relative}
+.chat.tri .who{color:var(--accent)}
+.ans{display:grid;gap:9px;font-family:var(--ui)}
+.ans .r{display:grid;grid-template-columns:1fr 160px 70px;align-items:center;gap:14px;font-size:13.5px;color:var(--ink)}
+.bar{height:7px;background:#f0ede7;border-radius:4px;overflow:hidden}.bar i{display:block;height:100%;border-radius:4px;background:var(--c,var(--accent))}
+.ans .v{font-family:var(--mono);font-size:12px;text-align:right;color:var(--dim)}
+.ans .r .cl{display:flex;align-items:center;gap:8px}
+.ans .r .cl:before{content:"";width:7px;height:7px;border-radius:2px;background:var(--c)}
+.chat .foot{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;padding-top:12px;border-top:1px solid var(--border2)}
+.pill{font-family:var(--mono);font-size:11px;color:var(--dim);background:var(--panel);border:1px solid var(--border2);border-radius:99px;padding:3px 9px}
+.pill.ok{color:var(--success);background:#ecf6f1;border-color:#c9e5d7}
+
+/* how it works */
+.how{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.how .head{display:flex;justify-content:space-between;align-items:end;gap:40px}
+.flow{display:grid;grid-template-columns:1fr 40px 1.12fr 40px 1.12fr 40px 1fr;margin-top:64px;align-items:stretch}
+.node{background:var(--bg);border:1px solid var(--border);border-radius:16px;padding:22px 20px 20px;position:relative}
+.node .k{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--faint)}
+.node h3{font-size:25px;line-height:1.15;margin:10px 0 8px}
+.node p{font-size:14.5px;color:var(--muted);line-height:1.55}
+.node .vis{margin-top:16px}
+.conn{display:flex;align-items:center;justify-content:center;position:relative}
+.conn:before{content:"";position:absolute;left:6px;right:6px;top:50%;border-top:1.5px dashed #d9c9b0}
+.conn span{position:relative;width:28px;height:28px;border-radius:50%;background:var(--white);border:1px solid var(--border);display:grid;place-items:center;color:var(--accent);font-size:14px;box-shadow:var(--shadow-card)}
+.src{display:grid;gap:7px}
+.src div{display:flex;align-items:center;gap:9px;background:var(--white);border:1px solid var(--border2);border-radius:9px;padding:8px 10px;font-size:13px;color:var(--dim);font-family:var(--ui)}
+.src .ic{width:22px;height:22px;border-radius:6px;background:var(--panel2);display:grid;place-items:center;font-size:11px;color:var(--ink)}
+.wave{display:flex;align-items:center;gap:2px;height:16px;margin-left:auto}.wave i{width:2px;background:#cfc6b8;border-radius:1px;display:block}
+.atom{background:var(--white);border:1px solid var(--border2);border-radius:10px;padding:10px 12px;font-family:var(--ui)}
+.atom .lab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10.5px;color:var(--faint);letter-spacing:.04em}
+.atom .lab b{color:var(--accent);font-weight:600}
+.atom p{font-family:var(--serif);font-size:15px;line-height:1.35;color:var(--ink);margin-top:6px}
+.atom p mark{background:linear-gradient(transparent 58%,#f8dfb7 58%);color:inherit}
+.atom .span{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:6px}
+.tags{display:flex;flex-wrap:wrap;gap:6px}
+.tag{font-family:var(--ui);font-size:12px;font-weight:600;border-radius:6px;padding:4px 9px;border:1px solid;line-height:1.3}
+.t-pain{color:var(--pain);background:#fbeef1;border-color:#f1cfd7}
+.t-suc{color:var(--success);background:#ecf6f1;border-color:#c9e5d7}
+.t-hes{color:var(--hes);background:#f3eef9;border-color:#ddd0ee}
+.t-use{color:var(--use);background:#eaf5fa;border-color:#c5e3ef}
+.t-cond{color:var(--cond);background:#faf3e6;border-color:#ecd9b3}
+.spark{background:var(--white);border:1px solid var(--border2);border-radius:10px;padding:10px 12px 8px;font-family:var(--ui)}
+.spark .lab{display:flex;justify-content:space-between;font-size:12px;color:var(--dim);font-weight:500}
+.spark svg{width:100%;height:56px;display:block;margin-top:4px}
+.spark .q{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--faint)}
+.agents{margin-top:28px;background:var(--dark);color:var(--dark-text);border-radius:20px;padding:30px 34px;display:grid;grid-template-columns:1fr 1.25fr;gap:40px;align-items:center;position:relative;overflow:hidden}
+.agents:after{content:"";position:absolute;right:-120px;top:-160px;width:420px;height:420px;background:radial-gradient(circle,#d9770633,transparent 65%)}
+.agents .eyebrow{color:var(--dark-faint)}
+.agents h3{color:var(--dark-text);font-size:34px;line-height:1.1;margin:10px 0 10px}
+.agents p{color:var(--dark-dim);font-size:15.5px}
+.agents .chips{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}
+.agents .chip{font-family:var(--mono);font-size:13px;border:1px solid #3d3d3d;border-radius:8px;padding:8px 13px;color:var(--dark-text);background:#1a1a1a}
+.agents .chip b{color:var(--accent2);font-weight:500;margin-right:6px}
+.code{position:relative;z-index:1;background:#0c0c0c;border:1px solid var(--dark-border);border-radius:14px;font-family:var(--mono);font-size:13px;line-height:1.7;color:#d7d7d2;overflow:hidden}
+.code .bar2{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;border-bottom:1px solid var(--dark-border);font-size:11.5px;color:var(--dark-faint)}
+.code .bar2 .ill{background:#2a2316;border-color:#6b5426;color:#e8c27c}
+.code pre{padding:16px 18px;white-space:pre;font-family:inherit}
+.code .k{color:#f2a33a}.code .s{color:#9fd1b5}.code .n{color:#c9b3f0}.code .c{color:#6f6f6a}
+.consumers{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.consumers span{font-size:12.5px;color:var(--dark-dim);border:1px solid #2b2b2b;border-radius:99px;padding:4px 11px}
+
+/* messaging */
+.msg .grid{display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.checks{margin-top:30px;display:grid;gap:14px}
+.checks div{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:16px;color:var(--dim)}
+.checks i{width:22px;height:22px;border-radius:50%;background:var(--accent-soft);color:var(--accent);display:grid;place-items:center;font-style:normal;font-size:12px;font-weight:700;margin-top:1px}
+.checks b{color:var(--ink);font-weight:600}
+.oneline{margin-top:34px;display:flex;align-items:center;gap:14px;font-family:var(--serif);font-size:23px;white-space:nowrap;color:var(--ink)}
+.oneline:before{content:"";width:30px;height:1.5px;background:var(--accent)}
+.stage{position:relative;padding:58px 34px 34px;background:linear-gradient(160deg,#f7efe3,#f4f1ec);border:1px solid var(--border);border-radius:26px}
+.stage .ill{position:absolute;top:20px;left:34px}
+.big{background:var(--white);border:1px solid var(--border2);border-top:3px solid var(--pain);border-radius:14px;padding:22px 24px;box-shadow:var(--shadow-overlay);font-family:var(--ui)}
+.big .cat{display:flex;justify-content:space-between;align-items:center;font-size:11.5px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--pain)}
+.big .cat span:last-child{font-family:var(--mono);font-weight:400;letter-spacing:.02em;text-transform:none;color:var(--faint);font-size:11.5px}
+.big .t{font-size:21px;font-weight:600;color:var(--ink);margin-top:10px;line-height:1.25}
+.big .d{font-size:14px;color:var(--muted);margin-top:4px}
+.big .meta{font-size:13px;margin-top:12px}.big .meta .dots i{background:var(--pain)}
+.cnt{display:flex;align-items:baseline;gap:10px;margin-top:18px}
+.cnt b{font-family:var(--serif);font-weight:400;font-size:46px;line-height:1;color:var(--ink)}
+.cnt span{font-size:15px;color:var(--dim)}
+.cnt em{font-style:normal;font-family:var(--mono);font-size:11.5px;color:var(--cond)}
+.meter{height:8px;border-radius:5px;background:#f0ede7;overflow:hidden;margin-top:12px}
+.meter i{display:block;height:100%;width:33.9%;background:var(--pain);border-radius:5px}
+.dist{display:grid;grid-template-columns:96px 1fr 50px;gap:8px 12px;align-items:center;margin-top:18px;font-size:13px;color:var(--dim)}
+.dist .bar i{background:#d58a9b}.dist .v{font-family:var(--mono);font-size:12px;text-align:right;color:var(--ink)}
+.qlist{margin-top:20px;padding-top:16px;border-top:1px solid var(--border2)}
+.qlist .lab{display:flex;justify-content:space-between;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+details.quote{margin-top:10px;border:1px solid var(--border2);border-left:3px solid var(--pain);border-radius:10px;background:var(--white);transition:background .15s}
+details.quote summary{list-style:none;cursor:pointer;padding:12px 14px;display:flex;gap:12px;align-items:flex-start;justify-content:space-between}
+details.quote summary::-webkit-details-marker{display:none}
+details.quote summary p{font-family:var(--serif);font-size:17px;line-height:1.35;color:var(--ink)}
+details.quote summary p mark{background:linear-gradient(transparent 58%,#f8dfb7 58%);color:inherit}
+details.quote summary .go{flex:none;font-family:var(--mono);font-size:11px;color:var(--accent);border:1px solid #ecd6b8;background:var(--accent-soft);border-radius:6px;padding:3px 8px;margin-top:2px;white-space:nowrap}
+details.quote[open]{background:#fffaf2;border-color:#ecd6b8;border-left-color:var(--accent)}
+details.quote[open] summary .go{background:var(--accent);color:#fff;border-color:var(--accent)}
+.span-detail{padding:0 14px 14px;font-family:var(--ui)}
+.span-detail .row{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:12.5px;color:var(--muted);background:var(--white);border:1px solid var(--border2);border-radius:8px;padding:10px 12px}
+.span-detail .row b{font-weight:500;color:var(--ink)}
+.span-detail .tx{margin-top:8px;font-size:13px;color:var(--dim);line-height:1.55;padding:10px 12px;background:var(--panel);border-radius:8px}
+.span-detail .tx .sp{display:block;font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-bottom:4px}
+.span-detail .tx mark{background:#f8dfb7;color:var(--ink);border-radius:2px;padding:0 2px}
+.plain{margin-top:8px;padding:11px 14px;border:1px solid var(--border2);border-left:3px solid #e2b7c1;border-radius:10px;background:var(--white);display:flex;justify-content:space-between;gap:12px}
+.plain p{font-family:var(--serif);font-size:16px;line-height:1.35;color:var(--ink)}
+.plain .who{font-family:var(--mono);font-size:10.5px;color:var(--faint);margin-top:4px;display:block}
+
+/* expansion staircase */
+.exp{background:var(--white);border-top:1px solid var(--border);border-bottom:1px solid var(--border);overflow:hidden}
+.exp .head{text-align:center}
+.exp .head .lede{margin:0 auto}
+.stairs{position:relative;margin:72px auto 0;height:500px;max-width:1080px}
+.step{position:absolute;z-index:2;width:252px;background:var(--bg);border:1px solid var(--border);border-radius:18px;padding:22px 24px 22px;box-shadow:var(--shadow-card)}
+.step .no{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.step .no span:last-child{color:var(--faint);font-weight:400}
+.step h3{font-size:27px;line-height:1.12;margin:12px 0 8px}
+.step p{font-size:14.5px;color:var(--muted);line-height:1.5}
+.step .who{display:flex;gap:6px;flex-wrap:wrap;margin-top:14px}
+.step .who span{font-size:12px;color:var(--dim);background:var(--white);border:1px solid var(--border2);border-radius:99px;padding:3px 10px}
+.step.s1{left:0;top:300px;background:var(--ink);border-color:var(--ink)}
+.step.s1 h3{color:var(--dark-text)}.step.s1 p{color:var(--dark-dim)}.step.s1 .no{color:var(--accent2)}.step.s1 .no span:last-child{color:#a3a39c}
+.step.s1 .who span{background:#262626;border-color:#3d3d3d;color:var(--dark-dim)}
+.step.s2{left:276px;top:200px}.step.s3{left:552px;top:100px}.step.s4{left:828px;top:0}
+.tread{position:absolute;bottom:0;z-index:1;border-top:1px solid var(--border);border-left:1px solid var(--border);background:linear-gradient(180deg,#f7f3ed,#ffffff00 85%);border-radius:14px 0 0 0}
+.stairline{position:absolute;inset:0;pointer-events:none}
+.also{margin-top:36px;text-align:center;font-size:16px;color:var(--muted)}
+.also b{color:var(--ink);font-weight:600;margin-right:6px}
+.also span{display:inline-block;margin:0 4px;border:1px solid var(--border);background:var(--bg);border-radius:99px;padding:4px 12px;font-size:14px;color:var(--dim)}
+
+/* trust */
+.trust .grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:56px}
+.tbox{background:var(--white);border:1px solid var(--border);border-radius:22px;padding:34px;box-shadow:var(--shadow-card)}
+.tbox h3{font-size:31px;line-height:1.12;margin:12px 0 10px}
+.tbox>p{font-size:16px;color:var(--muted);max-width:460px}
+.claim{margin-top:26px;background:var(--bg);border:1px solid var(--border2);border-radius:14px;padding:18px 20px;font-size:15.5px;line-height:1.75;color:var(--dim)}
+.claim .lab{display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);margin-bottom:8px}
+.claim b{color:var(--ink);font-weight:600}
+.cite{display:inline-grid;place-items:center;min-width:20px;height:18px;padding:0 5px;border-radius:5px;background:var(--accent-soft);border:1px solid #ecd6b8;color:var(--accent);font-family:var(--mono);font-size:10.5px;font-weight:600;vertical-align:2px;margin-left:2px}
+.cite.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+.pop{margin:14px 0 0 40px;background:var(--white);border:1px solid #ecd6b8;border-radius:12px;padding:14px 16px;box-shadow:var(--shadow-overlay);position:relative}
+.pop:before{content:"";position:absolute;left:28px;top:-7px;width:12px;height:12px;background:var(--white);border-left:1px solid #ecd6b8;border-top:1px solid #ecd6b8;transform:rotate(45deg)}
+.pop p{font-family:var(--serif);font-size:17px;line-height:1.35;color:var(--ink)}
+.pop .m{font-family:var(--mono);font-size:11px;color:var(--faint);margin-top:8px;display:flex;gap:6px 14px;flex-wrap:wrap}.pop .m>*{white-space:nowrap}
+.pop .m b{color:var(--muted);font-weight:500}
+.chart{margin-top:26px;background:var(--bg);border:1px solid var(--border2);border-radius:14px;padding:20px 22px}
+.chart .lab{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-weight:600;color:var(--ink);font-family:var(--ui)}
+.chart .sub{font-size:13px;color:var(--muted);margin-top:2px;font-family:var(--ui)}
+.cols{display:flex;align-items:flex-end;gap:36px;height:190px;margin-top:20px;padding:0 20px;border-bottom:1px solid var(--border)}
+.colw{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;height:100%}
+.colw .val{font-family:var(--serif);font-size:34px;line-height:1;color:var(--ink);margin-bottom:8px}
+.colw .col{width:100%;max-width:120px;border-radius:8px 8px 0 0}
+.collab{display:flex;gap:36px;padding:10px 20px 0}
+.collab span{flex:1;text-align:center;font-size:13px;color:var(--dim);font-family:var(--ui)}
+.caveat{display:flex;gap:10px;margin-top:16px;font-size:13.5px;color:var(--muted);line-height:1.5}
+.caveat i{font-style:normal;flex:none;width:20px;height:20px;border-radius:50%;border:1px solid var(--border);display:grid;place-items:center;font-size:11px;color:var(--dim);font-family:var(--mono)}
+
+/* moat */
+.moat{background:var(--dark);color:var(--dark-text);overflow:hidden}
+.moat:before{content:"";position:absolute;left:50%;top:-300px;width:1100px;height:700px;transform:translateX(-50%);background:radial-gradient(ellipse at center,#d977061f,transparent 60%)}
+.moat .grid{position:relative;display:grid;grid-template-columns:1fr 1.05fr;gap:80px;align-items:center}
+.moat h2{color:var(--dark-text)}
+.moat .eyebrow{color:var(--dark-faint)}
+.moat .lede{color:var(--dark-dim)}
+.moat .btn{margin-top:36px}
+.moat .fine{margin-top:14px;font-size:13px;color:var(--dark-faint)}
+.bench{background:var(--dark2);border:1px solid var(--dark-border);border-radius:22px;padding:28px;font-family:var(--ui)}
+.bench .top{display:flex;justify-content:space-between;align-items:center}
+.bench .top .t{font-size:15px;font-weight:600}
+.bench .ill{background:#2a2316;border-color:#6b5426;color:#e8c27c}
+.cos{display:flex;gap:8px;margin:20px 0 6px;align-items:center;flex-wrap:wrap}
+.cos span{font-family:var(--mono);font-size:11.5px;color:var(--dark-dim);border:1px dashed #3d3d3d;border-radius:8px;padding:6px 10px}
+.cos span.you{border-style:solid;border-color:var(--accent);color:var(--accent2)}
+.schema{margin:16px 0 20px;padding:12px 14px;border:1px solid #333;border-radius:12px;background:#171717;display:flex;justify-content:space-between;align-items:center;font-family:var(--mono);font-size:12px;color:var(--dark-dim)}
+.schema b{color:var(--dark-text);font-weight:500}
+.brow{display:grid;grid-template-columns:170px 1fr 54px;gap:6px 14px;align-items:center;font-size:13px;color:var(--dark-dim);padding:10px 0;border-top:1px solid var(--dark-border)}
+.brow .tr{position:relative;height:22px}
+.brow .tr .b1,.brow .tr .b2{position:absolute;left:0;height:8px;border-radius:4px}
+.brow .tr .b1{top:1px;background:var(--accent)}
+.brow .tr .b2{top:13px;background:#4a4a46}
+.brow .v{font-family:var(--mono);font-size:11.5px;text-align:right;line-height:1.1}
+.brow .v span{display:block;color:#8c8c88}
+.legend{display:flex;gap:18px;margin-top:14px;padding-top:12px;border-top:1px solid var(--dark-border);font-size:12px;color:var(--dark-faint)}
+.legend i{display:inline-block;width:10px;height:6px;border-radius:3px;margin-right:6px;vertical-align:1px}
+
+/* alongside */
+.along{padding:84px 0}
+.along .box{display:grid;grid-template-columns:auto 1fr auto;gap:40px;align-items:center;background:var(--white);border:1px solid var(--border);border-radius:22px;padding:34px 40px;box-shadow:var(--shadow-card)}
+.along h3{font-size:36px;line-height:1.1}
+.along p{font-size:16px;color:var(--muted);max-width:520px}
+.stack{display:flex;align-items:center;gap:10px;font-family:var(--mono);font-size:12.5px;color:var(--dim)}
+.stack span{border:1px solid var(--border);border-radius:9px;padding:8px 12px;background:var(--bg)}
+.stack span.me{background:var(--ink);color:#fff;border-color:var(--ink)}
+.stack i{font-style:normal;color:var(--accent)}
+
+/* final cta */
+.final{padding:40px 0 120px}
+.final .card{position:relative;overflow:hidden;background:var(--ink);border-radius:30px;padding:72px 64px;display:grid;grid-template-columns:1fr 470px;gap:64px;color:var(--dark-text)}
+.final .card:before{content:"";position:absolute;left:-200px;bottom:-300px;width:800px;height:700px;background:radial-gradient(circle,#d9770638,transparent 62%)}
+.final .l{position:relative}
+.final .eyebrow{color:var(--dark-faint)}
+.final h2{color:var(--dark-text);font-size:58px}
+.final .lede{color:var(--dark-dim)}
+.final .steps2{margin-top:36px;display:grid;gap:16px}
+.final .steps2 div{display:grid;grid-template-columns:34px 1fr;gap:12px;font-size:15.5px;color:var(--dark-dim)}
+.final .steps2 i{font-style:normal;font-family:var(--mono);font-size:12px;color:var(--accent2);border:1px solid #3d3d3d;border-radius:8px;height:26px;display:grid;place-items:center}
+.final .steps2 b{color:var(--dark-text);font-weight:600}
+form{position:relative;background:var(--white);color:var(--ink);border-radius:20px;padding:30px;box-shadow:0 40px 80px -30px #000c}
+form h4{font-family:var(--serif);font-weight:400;font-size:26px}
+form .s{font-size:14px;color:var(--muted);margin-top:2px}
+.fld{margin-top:16px}
+.fld label,.fld .lbl{display:block;font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input[type=text],input[type=email],select{width:100%;font-family:var(--sans);font-size:15px;color:var(--ink);background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:12px 13px;outline:none}
+input:focus,select:focus{border-color:var(--accent);box-shadow:0 0 0 4px #d977061f;background:#fff}
+.boxes{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.boxes label{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--dim);border:1px solid var(--border);border-radius:10px;padding:10px 11px;cursor:pointer;background:var(--bg);margin:0}
+.boxes input{appearance:none;-webkit-appearance:none;width:16px;height:16px;border:1.5px solid #bcbcb6;border-radius:4px;background:#fff;display:grid;place-items:center;flex:none}
+.boxes input:checked{background:var(--ink);border-color:var(--ink)}
+.boxes input:checked:after{content:"";width:8px;height:4px;border-left:2px solid #fff;border-bottom:2px solid #fff;transform:rotate(-45deg) translate(1px,-1px)}
+.boxes label:has(input:checked){border-color:var(--ink);background:#fff;color:var(--ink)}
+form .btn{width:100%;justify-content:center;margin-top:20px;padding:15px}
+form .priv{font-size:12px;color:var(--faint);margin-top:12px;text-align:center}
+
+footer{border-top:1px solid var(--border);padding:44px 0 56px}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:20px}
+footer img{height:24px}
+footer .r{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+footer .c{font-size:13px;color:var(--faint)}
+.disclaim{font-family:var(--mono);font-size:11.5px;color:var(--faint);text-align:center;padding-top:22px;letter-spacing:.02em}
+
+/* responsive */
+@media (max-width:1100px){
+ .tread{display:none}
+ .flow{grid-template-columns:1fr;gap:0}.conn{height:44px}.conn:before{left:50%;right:auto;top:6px;bottom:6px;border-top:0;border-left:1.5px dashed #d9c9b0}.conn span{transform:rotate(90deg)}
+ .stairs{height:auto;display:grid;gap:14px}.step{position:relative;left:auto!important;top:auto!important;width:auto}
+ .stairline{display:none}
+}
+@media (max-width:860px){
+ body{font-size:15px}.wrap{padding:0 20px}.sec{padding:84px 0}
+ nav .links,nav .signin{display:none}nav .wrap{height:60px}nav .logo img{height:24px}
+ .hero{padding-top:56px}.hero h1{font-size:46px}.hero .lede{font-size:17px}
+ .hero .ctas{flex-direction:column;align-items:stretch}.hero .ctas .btn{justify-content:center}
+ .badge{font-size:12px}.badge .sep,.badge .b2{display:none}
+ h2{font-size:36px}.lede{font-size:17px}
+ .frame{margin-top:48px;border-radius:16px 16px 0 0}.frame .inner{grid-template-columns:minmax(0,1fr);padding:18px}.side{border-right:0;padding-right:0;border-bottom:1px solid var(--border2);padding-bottom:18px}
+ .cards{grid-template-columns:minmax(0,1fr)}.cards .tcard:nth-child(n+3){display:none}
+ .frame .chrome .crumbs{display:none}
+ .problem .grid,.msg .grid,.moat .grid{grid-template-columns:1fr;gap:44px}
+ .ans .r{grid-template-columns:1fr 90px 54px;gap:10px;font-size:12.5px}
+ .how .head{flex-direction:column;align-items:flex-start;gap:0}.flow{margin-top:40px}
+ .agents{grid-template-columns:1fr;padding:24px 20px;gap:24px}.agents h3{font-size:28px}.code{font-size:11.5px}.code pre{overflow:hidden}
+ .stage{padding:16px;border-radius:18px}.stage .ill{position:static;margin-bottom:12px}.big{padding:18px}.cnt b{font-size:38px}
+ .dist{grid-template-columns:80px 1fr 44px}
+ .oneline{font-size:21px;white-space:normal}
+ .trust .grid{grid-template-columns:1fr}.tbox{padding:22px}.tbox h3{font-size:26px}.pop{margin-left:10px}
+ .cols{gap:20px;padding:0 6px}.collab{gap:20px;padding:10px 6px 0}
+ .brow{grid-template-columns:110px 1fr 46px;font-size:12px}
+ .along{padding:56px 0}.along .box{grid-template-columns:1fr;gap:18px;padding:26px 22px}.along h3{font-size:28px}.stack{flex-wrap:wrap}
+ .final{padding:20px 0 72px}.final .card{grid-template-columns:1fr;padding:36px 20px 20px;gap:34px;border-radius:22px}.final h2{font-size:38px}
+ form{padding:22px 18px}.two{grid-template-columns:1fr}.boxes{grid-template-columns:1fr 1fr}
+ footer .wrap{flex-direction:column;align-items:flex-start}footer .r{flex-wrap:wrap;gap:16px}
+}
+
+@media (prefers-reduced-motion: reduce){
+ html{scroll-behavior:auto}
+ .btn,.conn span{transition:none}
+}
+button:disabled{opacity:.72;cursor:progress}
+
+</style></head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#top"><img src="/brand/logo.png" alt="trigi.ai"></a>
+  <div class="links"><a href="#how">How it works</a><a href="#messaging">Messaging</a><a href="#expansion">Expansion</a><a href="#trust">Trust</a><a href="#benchmark">Benchmark</a></div>
+  <div class="right"><a class="btn btn-primary" href="#teardown">Get a messaging teardown</a></div>
+</div></nav>
+
+<!-- 1 HERO -->
+<section class="hero" id="top"><div class="wrap">
+  <span class="badge"><span class="dot"></span>Now in early access<span class="sep"></span><span class="b2">Benchmark design-partner cohort open</span></span>
+  <h1>The buyer truth your agents are <span class="a">missing.</span></h1>
+  <p class="lede">Trigi turns your sales calls and CRM into buyer evidence that's counted, consistent, and comparable across accounts. That covers pains, success criteria, hesitations and use cases, starting with messaging your team can actually prove.</p>
+  <div class="ctas">
+    <a class="btn btn-primary" href="#teardown">Get a messaging teardown <span>→</span></a>
+    <a class="btn btn-ghost" href="#agents"><span class="mono">&lt;/&gt;</span> Connect via API/MCP</a>
+  </div>
+  <p class="note"><b>Bring 3–6 months of calls and CRM history.</b> See your top buyer themes in one meeting.</p>
+
+  <div class="frame">
+    <div class="chrome">
+      <div class="l"><div class="dots"><i></i><i></i><i></i></div><span class="crumbs">trigi / <b>Buyer themes</b> / all accounts · last 2 quarters</span></div>
+      <span class="ill">Illustrative data</span>
+    </div>
+    <div class="inner">
+      <div class="side">
+        <h4>Overview</h4>
+        <div class="s">What buyers are telling you, across every call in range.</div>
+        <div class="f">All segments · Last 2 quarters</div>
+        <div class="stat"><div><b>112</b><span>accounts</span></div><div><b>486</b><span>calls</span></div><div><b>5</b><span>theme types</span></div><div><b>Q/Q</b><span>trend tracked</span></div></div>
+        <div class="tl"><div class="k">Summary</div><p>Buyers want proof their messaging lands, but hesitate over integration effort and who owns rollout internally.</p></div>
+      </div>
+      <div class="cards">
+        <div class="tcard c-pain"><div class="cat">Pain points</div>
+          <div class="titem"><div class="t">Can't Prove Which Message Lands</div><div class="d">Shipping positioning without evidence of what resonates</div><div class="meta"><span class="dots"><i></i><i></i><i></i></span><b>Mature</b> 38 accounts · 61 calls</div></div>
+          <div class="titem"><div class="t">Rep Memory As The Source</div><div class="d">Buyer insight filtered through whoever was on the call</div><div class="meta"><span class="dots"><i></i><i></i><i></i></span><b>Mature</b> 27 accounts · 40 calls</div></div>
+          <a class="more">+8 more</a></div>
+        <div class="tcard c-suc"><div class="cat">Success criteria</div>
+          <div class="titem"><div class="t">Messaging Backed By Buyer Words</div><div class="d">Copy and positioning traceable to real quotes</div><div class="meta"><span class="dots"><i></i><i></i><i></i></span><b>Mature</b> 31 accounts · 52 calls</div></div>
+          <div class="titem"><div class="t">Answer In One Meeting</div><div class="d">See top themes without a months-long research project</div><div class="meta"><span class="dots"><i></i><i></i><i></i></span><b>Emerging</b> 14 accounts · 19 calls</div></div>
+          <a class="more">+6 more</a></div>
+        <div class="tcard c-hes"><div class="cat">Hesitations &amp; risks</div>
+          <div class="titem"><div class="t">Integration Effort</div><div class="d">Worried about connecting the call recorder and CRM</div><div class="meta"><span class="dots"><i></i><i></i><i></i></span><b>Mature</b> 33 accounts · 47 calls</div></div>
+          <div class="titem"><div class="t">Data Quality And Utility</div><div class="d">Needs output to be clean and actionable, not demo data</div><div class="meta"><span class="dots"><i></i><i></i><i></i></span><b>Mature</b> 22 accounts · 30 calls</div></div>
+          <a class="more">+8 more</a></div>
+      </div>
+    </div>
+    <div class="fade"></div>
+  </div>
+</div></section>
+
+<!-- 2 PROBLEM -->
+<section class="sec problem rule" id="problem"><div class="wrap grid">
+  <div>
+    <span class="eyebrow line"><span class="n">01</span>The problem</span>
+    <h2>Agents reading raw transcripts <span class="a">interpret.</span> They don't count.</h2>
+    <p class="lede">Point an agent at a folder of calls and you get a fluent summary of whatever fit in its context window. It reads well, but you can't measure anything with it.</p>
+    <div class="missing">
+      <div><span class="i">✕ 01</span><p><b>No distribution</b><span>How many accounts actually said this, out of how many?</span></p></div>
+      <div><span class="i">✕ 02</span><p><b>No trend</b><span>Is this growing or fading quarter over quarter?</span></p></div>
+      <div><span class="i">✕ 03</span><p><b>No won-vs-lost split</b><span>Does it show up more in deals you lose than deals you win?</span></p></div>
+    </div>
+  </div>
+  <div class="vs">
+    <div class="chat raw">
+      <div class="hd"><span class="who">Agent · raw transcripts</span><span class="pill">a few calls in context</span></div>
+      <div class="q">What are buyers worried about?</div>
+      <div class="a">Buyers <em>often</em> mention integration concerns, and <em>several</em> seem worried about data quality. <em>Some</em> prospects also raised pricing. Overall sentiment appears <em>mostly positive</em>.</div>
+      <div class="foot"><span class="pill">different wording every run</span><span class="pill">no sources</span><span class="pill">no denominator</span></div>
+    </div>
+    <div class="chat tri">
+      <div class="hd"><span class="who">Agent · on Trigi</span><span class="ill">Illustrative</span></div>
+      <div class="q">What are buyers worried about?</div>
+      <div class="ans">
+        <div class="r c-hes"><span class="cl">Integration effort</span><div class="bar"><i style="width:29%"></i></div><span class="v">33 / 112</span></div>
+        <div class="r c-hes"><span class="cl">Data quality and utility</span><div class="bar"><i style="width:20%"></i></div><span class="v">22 / 112</span></div>
+        <div class="r c-cond"><span class="cl">Executive sign-off</span><div class="bar"><i style="width:16%"></i></div><span class="v">18 / 112</span></div>
+      </div>
+      <div class="foot"><span class="pill ok">same Themes every run</span><span class="pill ok">every count clicks to quotes</span><span class="pill ok">Q/Q trend</span><span class="pill ok">won vs lost</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 3 HOW IT WORKS -->
+<section class="sec how" id="how"><div class="wrap">
+  <div class="head">
+    <div><span class="eyebrow line"><span class="n">02</span>How it works</span>
+    <h2>From conversations to <span class="a">counted</span> buyer evidence.</h2></div>
+    <p class="lede" style="max-width:440px">Every statement keeps its exact quote. Every Theme stays stable, so you can compare it across accounts and over time.</p>
+  </div>
+  <div class="flow">
+    <div class="node"><div class="k">01 · Input</div><h3>Calls + CRM</h3><p>Your recorded sales conversations, joined to accounts, stages and outcomes.</p>
+      <div class="vis src">
+        <div><span class="ic">▶</span>Discovery<span class="wave"><i style="height:6px"></i><i style="height:7px"></i><i style="height:4px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:10px"></i><i style="height:5px"></i><i style="height:4px"></i><i style="height:4px"></i><i style="height:3px"></i><i style="height:9px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:15px"></i><i style="height:15px"></i><i style="height:3px"></i></span></div>
+        <div><span class="ic">▶</span>Evaluation<span class="wave"><i style="height:6px"></i><i style="height:7px"></i><i style="height:4px"></i><i style="height:14px"></i><i style="height:9px"></i><i style="height:10px"></i><i style="height:5px"></i><i style="height:4px"></i><i style="height:4px"></i><i style="height:3px"></i><i style="height:9px"></i><i style="height:11px"></i><i style="height:7px"></i><i style="height:15px"></i><i style="height:15px"></i><i style="height:3px"></i></span></div>
+        <div><span class="ic">◆</span>CRM: stage, outcome</div>
+      </div></div>
+    <div class="conn"><span>→</span></div>
+    <div class="node"><div class="k">02 · Extract</div><h3>Buyer statements with exact quotes</h3><p>Each statement is an <b style="color:var(--ink)">Atom</b>. The exact words and timestamp behind it are its <b style="color:var(--ink)">Span</b>.</p>
+      <div class="vis atom"><div class="lab"><span><b>ATOM</b> · hesitation</span><span>example</span></div><p>“Honestly the <mark>integration work is what worries me</mark> most.”</p><div class="span">SPAN · evaluation call · 22:14–22:19</div></div></div>
+    <div class="conn"><span>→</span></div>
+    <div class="node"><div class="k">03 · Standardize</div><h3>Stable Themes</h3><p>Atoms roll up into named Themes that mean the same thing across every account.</p>
+      <div class="vis tags"><span class="tag t-pain">Pain</span><span class="tag t-suc">Success criteria</span><span class="tag t-hes">Hesitation</span><span class="tag t-use">Use case</span><span class="tag t-cond">Buying conditions</span></div></div>
+    <div class="conn"><span>→</span></div>
+    <div class="node"><div class="k">04 · Track</div><h3>Quarter over quarter</h3><p>Count each Theme across accounts and follow how it moves.</p>
+      <div class="vis spark"><div class="lab"><span>Integration effort</span><span style="font-family:var(--mono);font-size:10px;color:var(--cond)">illustrative</span></div>
+        <svg viewBox="0 0 200 56" preserveAspectRatio="none"><defs><linearGradient id="g" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#7854a5" stop-opacity=".22"/><stop offset="1" stop-color="#7854a5" stop-opacity="0"/></linearGradient></defs><path d="M0 44 L50 38 L100 30 L150 22 L200 14 L200 56 L0 56Z" fill="url(#g)"/><path d="M0 44 L50 38 L100 30 L150 22 L200 14" fill="none" stroke="#7854a5" stroke-width="2"/><g fill="#fff" stroke="#7854a5" stroke-width="2"><circle cx="50" cy="38" r="3"/><circle cx="100" cy="30" r="3"/><circle cx="150" cy="22" r="3"/><circle cx="197" cy="14" r="3"/></g></svg>
+        <div class="q"><span>Q1</span><span>Q2</span><span>Q3</span><span>Q4</span></div></div></div>
+  </div>
+
+  <div class="agents" id="agents">
+    <div style="position:relative;z-index:1">
+      <span class="eyebrow">Built for agents</span>
+      <h3>Plug your agents into the buyer-truth layer.</h3>
+      <p>Research, PMM, win/loss, roadmap and CS agents query the same counted, cited evidence instead of each re-reading raw transcripts.</p>
+      <div class="chips"><span class="chip"><b>01</b>API</span><span class="chip"><b>02</b>MCP</span><span class="chip"><b>03</b>Standard schema</span></div>
+      <div class="consumers"><span>Research agent</span><span>PMM agent</span><span>Win/loss agent</span><span>Roadmap agent</span><span>CS agent</span></div>
+    </div>
+    <div class="code">
+      <div class="bar2"><span>theme.json</span><span class="ill">Illustrative shape</span></div>
+<pre><span class="c">// one Theme, as an agent receives it</span>
+{
+  <span class="k">"type"</span>: <span class="s">"hesitation"</span>,
+  <span class="k">"theme"</span>: <span class="s">"Integration effort"</span>,
+  <span class="k">"accounts"</span>: { <span class="k">"with"</span>: <span class="n">33</span>, <span class="k">"of"</span>: <span class="n">112</span> },
+  <span class="k">"by_outcome"</span>: { <span class="k">"lost"</span>: <span class="n">0.41</span>, <span class="k">"won"</span>: <span class="n">0.12</span> },
+  <span class="k">"trend"</span>: [<span class="n">18</span>, <span class="n">22</span>, <span class="n">27</span>, <span class="n">33</span>],
+  <span class="k">"spans"</span>: [{ <span class="k">"quote"</span>: <span class="s">"…integration work is what…"</span>,
+              <span class="k">"call"</span>: <span class="s">"eval-0412"</span>, <span class="k">"t"</span>: <span class="s">"22:14"</span> }]
+}</pre>
+    </div>
+  </div>
+</div></section>
+
+<!-- 4 START WITH MESSAGING -->
+<section class="sec msg" id="messaging"><div class="wrap grid">
+  <div>
+    <span class="eyebrow line"><span class="n">03</span>Start with messaging</span>
+    <h2>Messaging built from your buyers' <span class="a">own words.</span></h2>
+    <p class="lede">See which pains, success criteria and hesitations come up most, how many accounts stand behind each one, and the exact phrases buyers use.</p>
+    <div class="checks">
+      <div><i>✓</i><span><b>Account counts behind every pattern</b>, so positioning debates turn into a look at the numbers.</span></div>
+      <div><i>✓</i><span><b>Buyer phrasing, verbatim</b>, ready for homepage copy, briefs and campaigns.</span></div>
+      <div><i>✓</i><span><b>One click to the source quote</b> for anyone who asks "says who?"</span></div>
+    </div>
+    <div class="oneline">See your top buyer themes in one meeting.</div>
+  </div>
+  <div class="stage">
+    <span class="ill">Illustrative example data</span>
+    <div class="big">
+      <div class="cat"><span>Pain points</span><span>Global pattern · last 2 quarters</span></div>
+      <div class="t">Can't Prove Which Message Lands</div>
+      <div class="d">Shipping positioning without evidence of what resonates with buyers</div>
+      <div class="meta c-pain"><span class="dots"><i></i><i></i><i></i></span><b>Mature</b> 38 accounts · 61 calls · Most mentioned</div>
+      <div class="cnt"><b>38</b><span>of 112 accounts</span><em>(illustrative)</em></div>
+      <div class="meter"><i></i></div>
+      <div class="dist">
+        <span>Enterprise</span><div class="bar"><i style="width:45%"></i></div><span class="v">14/31</span>
+        <span>Mid-market</span><div class="bar"><i style="width:33%"></i></div><span class="v">17/52</span>
+        <span>SMB</span><div class="bar"><i style="width:24%"></i></div><span class="v">7/29</span>
+      </div>
+      <div class="qlist">
+        <div class="lab"><span>Spans · click a quote</span><span>2 of 61</span></div>
+        <details class="quote" open>
+          <summary><p>“We rewrite the homepage every quarter and still <mark>can't say which message actually landed.</mark>”</p><span class="go">View span ↗</span></summary>
+          <div class="span-detail">
+            <div class="row"><span>Speaker</span><b>VP Marketing · Mid-market account</b><span>Call</span><b>Discovery · 18:42–18:51</b><span>Theme</span><b>Pain · Can't prove which message lands</b></div>
+            <div class="tx"><span class="sp">TRANSCRIPT · 18:36</span>…and the frustrating part is we rewrite the homepage every quarter and still <mark>can't say which message actually landed.</mark> It's opinions all the way down.</div>
+          </div>
+        </details>
+        <div class="plain"><div><p>“Right now it's whatever the loudest rep remembers from last week.”</p><span class="who">Head of PMM · Enterprise · Demo call 07:15</span></div><span class="go" style="font-family:var(--mono);font-size:11px;color:var(--accent);white-space:nowrap">View span ↗</span></div>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 5 EXPANSION -->
+<section class="sec exp" id="expansion"><div class="wrap">
+  <div class="head">
+    <span class="eyebrow line"><span class="n">04</span>Expansion</span>
+    <h2>Start with messaging. <span class="a">Climb from there.</span></h2>
+    <p class="lede">The same evidence layer serves every team that needs to know what buyers actually said.</p>
+  </div>
+  <div class="stairs">
+    <div class="tread" style="left:-20px;width:296px;top:390px"></div><div class="tread" style="left:256px;width:296px;top:290px"></div><div class="tread" style="left:532px;width:296px;top:190px"></div><div class="tread" style="left:808px;width:292px;top:90px"></div>
+    <div class="step s1"><div class="no"><span>Step 01</span><span>Start</span></div><h3>Messaging</h3><p>Positioning and copy grounded in buyers' own words, with account counts behind each pattern.</p><div class="who"><span>PMM</span><span>Brand</span></div></div>
+    <div class="step s2"><div class="no"><span>Step 02</span><span></span></div><h3>Market research &amp; Win/loss</h3><p>Pains and hesitations, split by segment and by won vs lost.</p><div class="who"><span>Research</span><span>Win/loss</span></div></div>
+    <div class="step s3"><div class="no"><span>Step 03</span><span></span></div><h3>CS renewal &amp; expansion</h3><p>Success criteria from the sale, carried into the account's lifecycle.</p><div class="who"><span>Customer success</span></div></div>
+    <div class="step s4"><div class="no"><span>Step 04</span><span></span></div><h3>Product roadmap &amp; Enablement</h3><p>Use cases and gaps ranked by how many accounts raise them.</p><div class="who"><span>Product</span><span>Enablement</span></div></div>
+  </div>
+  <p class="also"><b>Also feeds:</b><span>Outbound</span><span>Competitive intel</span><span>Content</span></p>
+</div></section>
+
+<!-- 6 TRUST -->
+<section class="sec trust" id="trust"><div class="wrap">
+  <span class="eyebrow line"><span class="n">05</span>Trust</span>
+  <h2>Evidence you can check, <span class="a">not claims you have to trust.</span></h2>
+  <div class="grid">
+    <div class="tbox">
+      <span class="eyebrow">Traceable</span>
+      <h3>Every claim clicks through to its quote.</h3>
+      <p>Each number links to the Spans behind it: who said it, on which call, at what timestamp.</p>
+      <div class="claim">
+        <div class="lab"><span>Agent answer</span><span class="ill">Illustrative</span></div>
+        <b>Integration effort</b> comes up in 33 of 112 accounts<span class="cite on">1</span>, most often during evaluation calls<span class="cite">2</span>, and has risen each quarter this year<span class="cite">3</span>.
+      </div>
+      <div class="pop"><p>“Honestly the integration work is what worries me most. Who on our side owns it?”</p><div class="m"><b>Dir. RevOps · Enterprise</b><span>Evaluation call · 22:14</span><span>Span 1 of 33</span></div></div>
+    </div>
+    <div class="tbox">
+      <span class="eyebrow">Honest</span>
+      <h3>Distributions, not causation.</h3>
+      <p>Trigi tells you how often a theme appears and where. It doesn't claim a theme caused a deal to be won or lost.</p>
+      <div class="chart">
+        <div class="lab"><span>Deals where buyers raise integration risk</span><span class="ill">Illustrative</span></div>
+        <div class="sub">Share of deals, by outcome</div>
+        <div class="cols">
+          <div class="colw"><span class="val">41%</span><div class="col" style="height:68%;background:linear-gradient(#8e6bbb,#7854a5)"></div></div>
+          <div class="colw"><span class="val">12%</span><div class="col" style="height:20%;background:#cfc2e4"></div></div>
+        </div>
+        <div class="collab"><span>Lost deals</span><span>Won deals</span></div>
+      </div>
+      <div class="caveat"><i>i</i><span>A distribution, not a cause: integration risk shows up more often in lost deals. It's for your team to investigate, not proof of why deals were lost.</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- 7 MOAT -->
+<section class="sec moat" id="benchmark"><div class="wrap grid">
+  <div>
+    <span class="eyebrow line"><span class="n">06</span>The benchmark</span>
+    <h2>One schema, <span class="a">many companies.</span></h2>
+    <p class="lede">Because every customer's evidence uses the same Themes, opt-in, anonymized data can show how your buyers compare to your category. Every design partner sharpens the benchmark.</p>
+    <a class="btn btn-accent" href="#teardown">Join the benchmark design-partner cohort <span>→</span></a>
+    <p class="fine">Opt-in only. Benchmarks use anonymized, aggregated data.</p>
+  </div>
+  <div class="bench">
+    <div class="top"><span class="t">Your buyers vs your category</span><span class="ill">Illustrative</span></div>
+    <div class="cos"><span class="you">Your company</span><span>Co. A</span><span>Co. B</span><span>Co. C</span><span>Co. D</span><span>+ cohort</span></div>
+    <div class="schema"><span>↓ mapped to <b>one standard schema</b></span><span>anonymized · opt-in</span></div>
+    <div class="brow"><span>Integration effort</span><div class="tr"><i class="b1" style="width:29%"></i><i class="b2" style="width:21%"></i></div><span class="v">29%<span>21%</span></span></div>
+    <div class="brow"><span>Can't prove messaging</span><div class="tr"><i class="b1" style="width:34%"></i><i class="b2" style="width:38%"></i></div><span class="v">34%<span>38%</span></span></div>
+    <div class="brow"><span>Executive sign-off</span><div class="tr"><i class="b1" style="width:16%"></i><i class="b2" style="width:24%"></i></div><span class="v">16%<span>24%</span></span></div>
+    <div class="brow"><span>Data quality</span><div class="tr"><i class="b1" style="width:20%"></i><i class="b2" style="width:17%"></i></div><span class="v">20%<span>17%</span></span></div>
+    <div class="legend"><span><i style="background:var(--accent)"></i>Your accounts</span><span><i style="background:#4a4a46"></i>Category benchmark</span><span style="margin-left:auto">% of accounts raising each theme</span></div>
+  </div>
+</div></section>
+
+<!-- 8 ALONGSIDE -->
+<section class="along"><div class="wrap">
+  <div class="box">
+    <h3>Works alongside<br>Gong and your CRM.</h3>
+    <p>Keep your call recorder and your system of record. Trigi sits on top of them and turns what's already there into counted, cited buyer evidence.</p>
+    <div class="stack"><span>Call recorder</span><i>+</i><span>CRM</span><i>→</i><span class="me">Trigi</span></div>
+  </div>
+</div></section>
+
+<!-- 9 FINAL CTA -->
+<section class="final" id="teardown"><div class="wrap">
+  <div class="card">
+    <div class="l">
+      <span class="eyebrow line">Get a messaging teardown</span>
+      <h2>See your top buyer themes <span class="a" style="color:var(--accent2)">in one meeting.</span></h2>
+      <p class="lede">Bring 3–6 months of calls and CRM history. We'll show your top buyer themes and how often they appear, in one meeting.</p>
+      <div class="steps2">
+        <div><i>01</i><span><b>Connect</b> your call recordings and CRM history.</span></div>
+        <div><i>02</i><span><b>We structure</b> them into Themes with account counts and source quotes.</span></div>
+        <div><i>03</i><span><b>You walk through</b> your top buyer themes in a single session.</span></div>
+      </div>
+    </div>
+    <form id="teardown-form">
+      <h4>Request your teardown</h4>
+      <p class="s">Takes under a minute.</p>
+      <div class="two">
+        <div class="fld"><label for="n">Full name</label><input id="n" type="text" placeholder="Jordan Lee"></div>
+        <div class="fld"><label for="e">Work email</label><input id="e" type="email" placeholder="jordan@company.com"></div>
+      </div>
+      <div class="two">
+        <div class="fld"><label for="c">Company</label><input id="c" type="text" placeholder="Company name"></div>
+        <div class="fld"><label for="r">Your role</label><select id="r"><option>Product marketing</option><option>Research / insights</option><option>Revenue / sales leadership</option><option>Product</option><option>Customer success</option><option>Other</option></select></div>
+      </div>
+      <div class="fld"><span class="lbl">Which agents are you running or building?</span>
+        <div class="boxes">
+          <label><input type="checkbox">Research</label>
+          <label><input type="checkbox" checked>PMM</label>
+          <label><input type="checkbox">Win/loss</label>
+          <label><input type="checkbox">Product</label>
+          <label><input type="checkbox">CS</label>
+          <label><input type="checkbox">Enablement</label>
+        </div>
+      </div>
+      <button class="btn btn-accent" type="submit">Get a messaging teardown →</button>
+      <p class="priv">We'll reply to schedule your session. No spam.</p>
+    </form>
+  </div>
+  <p class="disclaim">All counts, percentages, quotes and companies shown on this page are illustrative example data, not customer results.</p>
+</div></section>
+
+<footer><div class="wrap">
+  <img src="/brand/logo.png" alt="trigi.ai">
+  <div class="r"><a href="#how">How it works</a><a href="#messaging">Messaging</a><a href="#trust">Trust</a><a href="#benchmark">Benchmark</a><a href="#teardown">Contact</a></div>
+  <span class="c">© 2026 Trigi. All rights reserved.</span>
+</div></footer>
+
+<script src="/form.js"></script>
+</body></html>

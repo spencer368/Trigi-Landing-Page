@@ -1,1 +1,12 @@
-This is the Trigi Page
+# Trigi
+
+Marketing page for [trigi.ai](https://trigi.ai/). The approved design is a static page served at `/`.
+
+```bash
+npm install
+npm run dev
+npm run build
+npm start
+```
+
+The teardown form posts to `/api/waitlist`, which forwards the work email to the existing Trigi waitlist.
